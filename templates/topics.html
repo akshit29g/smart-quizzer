@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mb-4 text-center">Choose Your Quiz</h3>
+<form method="POST" class="mx-auto" style="max-width:400px;">
+  <div class="mb-3">
+    <label class="form-label">Skill Level</label>
+    <select name="skill" class="form-select">
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Topic</label>
+    <select name="topic" class="form-select">
+      {% for t in topics %}<option>{{ t }}</option>{% endfor %}
+    </select>
+  </div>
+  <button class="btn btn-success w-100">Save & Start Quiz</button>
+</form>
+{% endblock %}
